@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "c1a792f2-f154-42a4-b38b-b2173b4ef9e1",
+		"name": "Coren",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29719104"
+	},
+	"item": [
+		{
+			"name": "AllIdentifiers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url-qa}}/identifiers/v1?page={number}&size={number}",
+					"host": [
+						"{{url-qa}}"
+					],
+					"path": [
+						"identifiers",
+						"v1"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "{number}"
+						},
+						{
+							"key": "size",
+							"value": "{number}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Identifier",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url-qa}}/identifiers/v1/identifiers/{identifier_id}",
+					"host": [
+						"{{url-qa}}"
+					],
+					"path": [
+						"identifiers",
+						"v1",
+						"identifiers",
+						"{identifier_id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Identifier",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{bearer}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"identifier_id\": \"Gusta_session25\",\n    \"status\": \"ACTIVE\",\n    \"traits\": {\n        \"cpf\": \"825.212.580-831\",\n        \"partner_id\": \"LIVELO\",\n        \"enrollment_partner\": \"BTG\",\n        \"identifier_id\": \"Gusta1\",\n        \"first_name\": \"gusta\",\n        \"last_name\": \"mello\",\n        \"birth_date\": \"2022-04-21\",\n        \"gender\": \"U1\",\n        \"enrollment_date\": \"teste\",\n        \"street\": \"bom\",\n        \"number\": true,\n        \"apartment_number\": \"ihuuuteste1\",\n        \"postal_code\": \"postal_code1\",\n        \"country\": \"BR1\",\n        \"district\": \"Vila Olimpia1\",\n        \"city\": \"São Paulo1\",\n        \"region\": \"SP1\",\n        \"home_phone_country_code\": \"121\",\n        \"home_phone_area_code\": \"121\",\n        \"home_phone_number\": \"121\",\n        \"mobile_phone_country_code\": \"551\",\n        \"mobile_phone_area_code\": \"121\",\n        \"mobile_phone_number\": \"9999999991\",\n        \"email\": \"email1@email.com\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url-qa}}/identifiers/v1/identifiers",
+					"host": [
+						"{{url-qa}}"
+					],
+					"path": [
+						"identifiers",
+						"v1",
+						"identifiers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Identifier",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"traits\": {\n        \"birth_date\": \"2022-04-27\",\n        \"gender\": \"U\",\n        \"enrollment_date\": \"2020-07-02T14:17:59.152Z\",\n        \"street\": \"street\",\n        \"number\": \"number\",\n        \"apartment_number\": \"22\",\n        \"postal_code\": \"postal_code\",\n        \"country\": \"BR\",\n        \"district\": \"Vila Olimpia\",\n        \"city\": \"São Paulo\",\n        \"region\": \"SP\",\n        \"home_phone_country_code\": \"12\",\n        \"home_phone_area_code\": \"12\",\n        \"home_phone_number\": \"12\",\n        \"mobile_phone_country_code\": \"55\",\n        \"mobile_phone_area_code\": \"12\",\n        \"mobile_phone_number\": \"999999999\",\n        \"email\": \"email@email.com\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url-qa}}/identifiers/v1/identifiers/{identifier_id}",
+					"host": [
+						"{{url-qa}}"
+					],
+					"path": [
+						"identifiers",
+						"v1",
+						"identifiers",
+						"{identifier_id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteIdentifierTrait",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url-qa}}/identifiers/v1/identifiers/{identifier_id}/traits/{trait}",
+					"host": [
+						"{{url-qa}}"
+					],
+					"path": [
+						"identifiers",
+						"v1",
+						"identifiers",
+						"{identifier_id}",
+						"traits",
+						"{trait}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Documentation",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "HEAD",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "documentation for users with email @iclubs.tech",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "Documentation: https://iclubs-agile.atlassian.net/wiki/spaces/IC/pages/779059201/Identifiers",
+					"protocol": "Documentation: https",
+					"host": [
+						"iclubs-agile",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"wiki",
+						"spaces",
+						"IC",
+						"pages",
+						"779059201",
+						"Identifiers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
